@@ -1,0 +1,345 @@
+jayachandran@jayachandrans-MacBook-Air backend % brew services list
+
+Name              Status  User         File
+mongodb-community started jayachandran ~/Library/LaunchAgents/homebrew.mxcl.mongodb-community.plist
+jayachandran@jayachandrans-MacBook-Air backend % mongo
+
+zsh: command not found: mongo
+jayachandran@jayachandrans-MacBook-Air backend % brew list | grep mongodb
+
+mongodb-community
+mongodb-database-tools
+jayachandran@jayachandrans-MacBook-Air backend % ls /opt/homebrew/bin | grep mongo
+
+mongod
+mongodump
+mongoexport
+mongofiles
+mongoimport
+mongorestore
+mongos
+mongosh
+mongostat
+mongotop
+jayachandran@jayachandrans-MacBook-Air backend % brew info mongodb-database-tools
+
+==> mongodb/brew/mongodb-database-tools: stable 100.9.5
+This package contains standard utilities for interacting with MongoDB.
+https://www.mongodb.com/
+Installed
+/opt/homebrew/Cellar/mongodb-database-tools/100.9.5 (15 files, 114.2MB) *
+  Built from source on 2024-10-22 at 19:36:21
+From: https://github.com/mongodb/homebrew-brew/blob/HEAD/Formula/mongodb-database-tools.rb
+jayachandran@jayachandrans-MacBook-Air backend % mongosh
+
+Current Mongosh Log ID:	6717c05651b6d3ff2039dc6b
+Connecting to:		mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.3.2
+Using MongoDB:		8.0.1 
+Using Mongosh:		2.3.2
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2024-10-22T20:32:07.040+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+test> show dbs;
+admin         40.00 KiB
+config       108.00 KiB
+fullstackdb  108.00 KiB
+local         72.00 KiB
+test> use fullstackdb;
+switched to db fullstackdb
+fullstackdb> show collections;
+users
+fullstackdb> db.users.find().pretty();
+[
+  {
+    _id: ObjectId('6717b473f18e9a83b180d202'),
+    name: 'zeerrr',
+    email: 'mjai3747@gmail.com',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6717b514f18e9a83b180d206'),
+    name: 'jai',
+    email: 'jai@gmail.com',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6717b5b4f18e9a83b180d209'),
+    name: 'jrbiur3uibr3',
+    email: 'jai3747@gmail.com',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6717b750f18e9a83b180d216'),
+    name: 'diueiuh3er',
+    email: 'mjai3747@gmailcom',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6717b825f18e9a83b180d226'),
+    name: 'suiweiue',
+    email: 'mjai37471@gmail.com',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6717b8b3f18e9a83b180d22f'),
+    name: 'jai',
+    email: 'mjai374723@gmail.com',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6717b969f18e9a83b180d23b'),
+    name: 'zeerrr ',
+    email: 'mjai374778@gmail.com',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6717ba30f18e9a83b180d256'),
+    name: 'deeubre',
+    email: 'jai12@gmail.com',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6717bad8f18e9a83b180d25b'),
+    name: 'jai',
+    email: 'jai23@gmail.com',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6717bc16f18e9a83b180d261'),
+    name: 'jai',
+    email: 'mjai5647@gmail.com',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6717bde9f18e9a83b180d265'),
+    name: 'bhefub',
+    email: 'majihdu@gmailcom',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6717bebff18e9a83b180d26b'),
+    name: 'mjai',
+    email: 'jai2@gmail.com',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6717bf37f18e9a83b180d271'),
+    name: 'jai456',
+    email: 'ai456@gmailcom',
+    __v: 0
+  }
+]
+fullstackdb> db.users.find().pretty();
+[
+  {
+    _id: ObjectId('6717b473f18e9a83b180d202'),
+    name: 'zeerrr',
+    email: 'mjai3747@gmail.com',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6717b514f18e9a83b180d206'),
+    name: 'jai',
+    email: 'jai@gmail.com',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6717b5b4f18e9a83b180d209'),
+    name: 'jrbiur3uibr3',
+    email: 'jai3747@gmail.com',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6717b750f18e9a83b180d216'),
+    name: 'diueiuh3er',
+    email: 'mjai3747@gmailcom',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6717b825f18e9a83b180d226'),
+    name: 'suiweiue',
+    email: 'mjai37471@gmail.com',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6717b8b3f18e9a83b180d22f'),
+    name: 'jai',
+    email: 'mjai374723@gmail.com',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6717b969f18e9a83b180d23b'),
+    name: 'zeerrr ',
+    email: 'mjai374778@gmail.com',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6717ba30f18e9a83b180d256'),
+    name: 'deeubre',
+    email: 'jai12@gmail.com',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6717bad8f18e9a83b180d25b'),
+    name: 'jai',
+    email: 'jai23@gmail.com',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6717bc16f18e9a83b180d261'),
+    name: 'jai',
+    email: 'mjai5647@gmail.com',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6717bde9f18e9a83b180d265'),
+    name: 'bhefub',
+    email: 'majihdu@gmailcom',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6717bebff18e9a83b180d26b'),
+    name: 'mjai',
+    email: 'jai2@gmail.com',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6717bf37f18e9a83b180d271'),
+    name: 'jai456',
+    email: 'ai456@gmailcom',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6717c131f18e9a83b180d275'),
+    name: 'new',
+    email: 'jai34747@gmail.com',
+    __v: 0
+  }
+]
+fullstackdb> db.users.find().pretty();
+[
+  {
+    _id: ObjectId('6717b473f18e9a83b180d202'),
+    name: 'zeerrr',
+    email: 'mjai3747@gmail.com',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6717b514f18e9a83b180d206'),
+    name: 'jai',
+    email: 'jai@gmail.com',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6717b5b4f18e9a83b180d209'),
+    name: 'jrbiur3uibr3',
+    email: 'jai3747@gmail.com',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6717b750f18e9a83b180d216'),
+    name: 'diueiuh3er',
+    email: 'mjai3747@gmailcom',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6717b825f18e9a83b180d226'),
+    name: 'suiweiue',
+    email: 'mjai37471@gmail.com',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6717b8b3f18e9a83b180d22f'),
+    name: 'jai',
+    email: 'mjai374723@gmail.com',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6717b969f18e9a83b180d23b'),
+    name: 'zeerrr ',
+    email: 'mjai374778@gmail.com',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6717ba30f18e9a83b180d256'),
+    name: 'deeubre',
+    email: 'jai12@gmail.com',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6717bad8f18e9a83b180d25b'),
+    name: 'jai',
+    email: 'jai23@gmail.com',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6717bc16f18e9a83b180d261'),
+    name: 'jai',
+    email: 'mjai5647@gmail.com',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6717bde9f18e9a83b180d265'),
+    name: 'bhefub',
+    email: 'majihdu@gmailcom',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6717bebff18e9a83b180d26b'),
+    name: 'mjai',
+    email: 'jai2@gmail.com',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6717bf37f18e9a83b180d271'),
+    name: 'jai456',
+    email: 'ai456@gmailcom',
+    __v: 0
+  },
+  {
+    _id: ObjectId('6717c131f18e9a83b180d275'),
+    name: 'new',
+    email: 'jai34747@gmail.com',
+    __v: 0
+  }
+]
+fullstackdb> 
+################################################################################################################################
+jayachandran@jayachandrans-MacBook-Air backend % lsof -i :5000 
+
+COMMAND   PID         USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+node    72942 jayachandran   20u  IPv6 0x8cf3463c813771c2      0t0  TCP *:commplex-main (LISTEN)
+jayachandran@jayachandrans-MacBook-Air backend % kill -9 72942 
+jayachandran@jayachandrans-MacBook-Air backend % 
+[1]  + killed     node server.js
+jayachandran@jayachandrans-MacBook-Air backend % node server.js
+
+(node:78554) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:78554) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+Backend server running on http://localhost:5000
+Connected to MongoDB
+
+################################################################################################################################
+
+Compiled with warnings.
+
+[eslint] 
+src/App.js
+  Line 251:13:  'response' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/App.js
+  Line 251:13:  'response' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+
+npm start for front end
