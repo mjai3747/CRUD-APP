@@ -1,0 +1,166 @@
+# # version: '3.8'
+
+# # services:
+# #   frontend:
+# #     build: 
+# #       context: ./frontend
+# #       dockerfile: Dockerfile
+# #     ports:
+# #       - "3000:80"
+# #     depends_on:
+# #       - backend
+# #     environment:
+# #       - REACT_APP_BACKEND_URL=http://backend:5000
+
+# #   backend:
+# #     build: 
+# #       context: ./backend
+# #       dockerfile: Dockerfile
+# #     ports:
+# #       - "5000:5000"
+# #     depends_on:
+# #       - mongodb
+# #     environment:
+# #       - MONGO_URI=mongodb://mongodb:27017/fullstackdb
+
+# #   mongodb:
+# #     image: mongo:latest
+# #     ports:
+# #       - "27017:27017"
+# #     volumes:
+# #       - mongodb_data:/data/db
+
+# # volumes:
+# #   mongodb_data:
+# version: '3.8'
+
+# services:
+#   frontend:
+#     build: 
+#       context: ./frontend
+#       dockerfile: Dockerfile
+#     ports:
+#       - "3000:80"
+#     depends_on:
+#       - backend
+#     environment:
+#       - REACT_APP_BACKEND_URL=http://backend:5000
+
+#   backend:
+#     build: 
+#       context: ./backend
+#       dockerfile: Dockerfile
+#     ports:
+#       - "5000:5000"
+#     depends_on:
+#       - mongodb
+#     environment:
+#       - MONGO_URI=mongodb://mongodb:27017/fullstackdb
+
+#   mongodb:
+#     image: mongo:latest
+#     ports:
+#       - "27017:27017"
+#     volumes:
+#       - mongodb_data:/data/db
+
+# volumes:
+#   mongodb_data:
+# version: '3.8'
+
+# services:
+#   frontend:
+#     build: 
+#       context: ./frontend
+#       dockerfile: Dockerfile
+#     ports:
+#       - "3000:80"  # Expose frontend on port 3000
+#     depends_on:
+#       - backend  # Make sure frontend starts after backend
+#     environment:
+#       - REACT_APP_BACKEND_URL=http://backend:5000  # Point to backend container
+
+#   backend:
+#     build: 
+#       context: ./backend
+#       dockerfile: Dockerfile
+#     ports:
+#       - "5000:5000"  # Expose backend on port 5000
+#     depends_on:
+#       - mongodb  # Make sure backend starts after mongodb
+#     environment:
+#       - MONGO_URI=mongodb://mongodb:27017/fullstackdb  # Connect to mongodb container
+
+#   mongodb:
+#     image: mongo:latest  # Use official MongoDB image
+#     ports:
+#       - "27017:27017"  # Expose MongoDB on port 27017
+#     volumes:
+#       - mongodb_data:/data/db  # Persistent MongoDB data storage
+
+# volumes:
+#   mongodb_data:  # Named volume for MongoDB data
+# services:
+#   frontend:
+#     build: 
+#       context: ./frontend
+#       dockerfile: Dockerfile
+#     ports:
+#       - "3000:80"
+#     depends_on:
+#       - backend
+#     environment:
+#       - REACT_APP_BACKEND_URL=http://backend:5000
+
+#   backend:
+#     build: 
+#       context: ./backend
+#       dockerfile: Dockerfile
+#     ports:
+#       - "5000:5000"
+#     depends_on:
+#       - mongodb
+#     environment:
+#       - MONGO_URI=mongodb://mongodb:27017/fullstackdb
+
+#   mongodb:
+#     image: mongo:latest
+#     ports:
+#       - "27017:27017"
+#     volumes:
+#       - mongodb_data:/data/db
+
+# volumes:
+#   mongodb_data:
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    environment:
+      - REACT_APP_BACKEND_URL=http://backend:5000
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongodb
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017/fullstackdb
+
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+volumes:
+  mongodb_data:
